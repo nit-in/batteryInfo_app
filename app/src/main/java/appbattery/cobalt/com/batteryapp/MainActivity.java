@@ -5,11 +5,14 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.os.BatteryManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import me.itangqi.waveloadingview.WaveLoadingView;
 
 public class MainActivity extends AppCompatActivity {
     private TextView batteryLevel;
@@ -17,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tempLevel;
     private TextView chargingCurrent;
     private TextView chargingState;
-    private ProgressBar pbar;
+    private WaveLoadingView pbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,17 +55,57 @@ public class MainActivity extends AppCompatActivity {
             int current = amps / 1000;
             double temps = (double) temp / 10;
             String str = "";
-            pbar.setMax(100);
-            pbar.setMin(0);
-            pbar.setProgress(0);
+
+
+            if (level>= 90){
+
+                pbar.setBorderColor(Color.rgb(76, 175, 80));//same as charging  ok
+                pbar.setWaveColor(Color.rgb(76, 175, 80));
+
+            }else if(level>=65 || level<90){
+                pbar.setBorderColor(Color.rgb(139, 195, 74));//light green ok
+                pbar.setWaveColor(Color.rgb(139, 195, 74));
+
+
+            }else if(level>=40 || level <65){
+                pbar.setBorderColor(Color.rgb(3, 169, 244));//blue ok
+                pbar.setWaveColor(Color.rgb(3, 169, 244));
+
+
+            }else if (level>=15 || level <40)
+            {
+                pbar.setBorderColor(Color.rgb(255, 64, 129));//pink  ok
+                pbar.setWaveColor(Color.rgb(255, 64, 129));
+
+            }else{
+                pbar.setBorderColor(Color.rgb(255, 82, 82));//red ok
+                pbar.setWaveColor(Color.rgb(255, 82, 82));
+
+            }
 
             if (isCharging) {
                 str = "Charging";
-                pbar.setIndeterminate(true);
+                pbar.setAmplitudeRatio(60);
+                pbar.setAnimDuration(1500);
+                pbar.setCenterTitle(str);
+                pbar.setProgressValue(level);
+                pbar.setCenterTitleSize(55);
+                pbar.setCenterTitleColor(Color.rgb(69, 90, 100));
+                pbar.startAnimation();
+                pbar.setBorderColor(Color.rgb(76, 175, 80));
+                pbar.setWaveColor(Color.rgb(76, 175, 80));
+
             } else {
                 str = "Discharging";
-                pbar.setIndeterminate(false);
-                pbar.setProgress(level,false);
+                pbar.pauseAnimation();
+                pbar.setAnimDuration(3000);
+                pbar.setAmplitudeRatio(60);
+                pbar.resumeAnimation();
+                pbar.setProgressValue(level);
+                pbar.setCenterTitleSize(55);
+                pbar.setCenterTitle(String.valueOf(level)+ " %");
+                pbar.setCenterTitleColor(Color.rgb(69, 90, 100));
+
             }
 
             batteryLevel.setText("Battery Level :" + String.valueOf(level) + " %");

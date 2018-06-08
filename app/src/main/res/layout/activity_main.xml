@@ -17,41 +17,56 @@
             android:layout_width="match_parent"
             android:layout_height="66dp"
             android:gravity="center"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="25sp"/>
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="66dp"
             android:gravity="center"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="25sp"/>
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="66dp"
             android:gravity="center"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="25sp"/>
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="66dp"
             android:gravity="center"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="25sp"/>
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="66dp"
             android:gravity="center"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="25sp"
+            />
 
-        <ProgressBar
+        <me.itangqi.waveloadingview.WaveLoadingView
             android:id="@+id/progressBar1"
-            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            app:wlv_borderColor="#03A9F4"
+            app:wlv_borderWidth="3dp"
+            app:wlv_progressValue="40"
+            app:wlv_shapeType="circle"
+            app:wlv_round_rectangle="true"
+            app:wlv_triangle_direction="north"
+            app:wlv_waveAmplitude="70"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            app:wlv_waveColor="#03A9F4"/>
 
 
     </LinearLayout>
