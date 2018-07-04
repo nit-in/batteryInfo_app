@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="charging">#4caf50</color>
+    <color name="okBattery">#8bc34a</color>
+    <color name="normalBattery">#03a9f4</color>
+    <color name="lowBattery">#ff4081</color>
+    <color name="criticalBattery">#ff5252</color>
+
 </resources>
