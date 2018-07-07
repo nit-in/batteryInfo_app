@@ -1,18 +1,16 @@
 package appbattery.cobalt.com.batteryapp;
 
-import android.content.BroadcastReceiver.PendingResult;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
-
-import me.itangqi.waveloadingview.WaveLoadingView;
+import appbattery.cobalt.com.batteryapp.receiver.batInfoReceiver;
 
 public class MainActivity extends AppCompatActivity {
     //TODO find a new way to make these available to Broadcast Reciever as this will cause memory leaks
 
     batInfoReceiver batInfo = new batInfoReceiver();
+
 
 
     @Override
@@ -25,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         batInfo.chargingCurrent = findViewById(R.id.textView5);
         batInfo.chargingState = findViewById(R.id.textView4);
         batInfo.pbar = findViewById(R.id.progressBar1);
-
     }
 
 
@@ -50,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        //unregisterReceiver(batInfo);
+//        unregisterReceiver(batInfo);
 
 
     }
