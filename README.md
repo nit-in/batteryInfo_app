@@ -4,5 +4,5 @@ Code for a simple Battery Information(Battery Level, Charging Status, Temperatur
 
 &nbsp;
 ### Preview : 
-![Preview](https://github.com/cobalt9/sample_batteryInfo_app/blob/master/appExampleP.gif)
-![Preview](https://github.com/cobalt9/sample_batteryInfo_app/blob/master/appExampleL.gif)
+![Preview](appExampleP.gif)
+![Preview](appExampleL.gif)
