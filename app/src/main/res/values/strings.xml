@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">batteryApp</string>
+    <string name="bLevel">Battery Level</string>
+    <string name="vLevel">Voltage</string>
+    <string name="tLevel">Temperature</string>
+    <string name="chargingState">State</string>
+    <string name="cLevel">Current</string>
 </resources>

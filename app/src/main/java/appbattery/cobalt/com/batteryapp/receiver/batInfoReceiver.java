@@ -81,13 +81,13 @@ public class batInfoReceiver extends BroadcastReceiver{
             wvhelper.start();
             wvhelper.setBatteryPercentage(level);
             
-           chargingState.setText("State : " + str+"("+plugState+")");
+           chargingState.setText(str+"("+plugState+")");
 
         } else {
             wvhelper.cancel();
             str = "Discharging";
 
-            chargingState.setText("State : " + str);
+            chargingState.setText(str);
 
             if (level>= 90){
                 // color same as charging
@@ -136,9 +136,9 @@ public class batInfoReceiver extends BroadcastReceiver{
         }
 
 
-         batteryLevel.setText("Battery Level :" + String.valueOf(level) + " %");
-         tempLevel.setText("Temp :" + String.valueOf(temps) + " C");
-         chargingCurrent.setText("Current :" + current + " mA");
-         voltLevel.setText("Voltage :" + String.valueOf(voltage) + " mV");
+         batteryLevel.setText( String.valueOf(level) + " %");
+         tempLevel.setText(String.valueOf(temps) + " C");
+         chargingCurrent.setText(current + " mA");
+         voltLevel.setText(String.valueOf(voltage) + " mV");
     }
 }
