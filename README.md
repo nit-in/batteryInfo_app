@@ -5,4 +5,5 @@ Code for a simple Battery Information(Battery Level, Charging Status, Temperatur
 &nbsp;
 ### Preview : 
 ![Preview](appExampleP.gif?s=90)
+&nbsp;
 ![Preview1](appExampleL.gif?s=90)
